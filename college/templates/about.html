@@ -1,0 +1,280 @@
+{% extends 'base.html' %} {% block title %} about page {% endblock %}
+
+<!-- Header Start -->
+{% block header %}
+<div class="container-fluid bg-primary py-5 mb-5 page-header">
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-10 text-center">
+        <h1 class="display-3 text-white animated slideInDown">About Us</h1>
+        <nav aria-label="breadcrumb"></nav>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+<!-- Header End -->
+
+<!-- Service Start -->
+
+{% block services %}
+<div class="container-xxl py-5">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="service-item text-center pt-3">
+          <div class="p-4">
+            <i class="fa fa-3x fa-solid fa-eye text-primary mb-4"></i>
+            <h5 class="mb-3">VISION</h5>
+            <p>
+              Fostering creativity and growth of excellence for techno-economic
+              upliftment of society.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+        <div class="service-item text-center pt-3">
+          <div class="p-4">
+            <i class="fa fa-3x fa-graduation-cap text-primary mb-4"></i>
+            <h5 class="mb-3">MISION</h5>
+            <p>
+              Producing quality engineers with profound skill through efficient
+              teaching learning process.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+        <div class="service-item text-center pt-3">
+          <div class="p-4">
+            <i class="fa fa-3x fa-solid fa-bullseye text-primary mb-4"></i>
+            <h5 class="mb-3">GOALS</h5>
+            <p style="padding-bottom: 25px">
+              Increase collaboration with students, faculty, staff and the
+              community.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+        <div class="service-item text-center pt-3">
+          <div class="p-4">
+            <i class="fa fa-3x fa-book-open text-primary mb-4"></i>
+            <h5 class="mb-3">VALUES</h5>
+            <p>
+              Equity: Accessibility, respect and fairness <br />
+              Innovation: Encouraging creativity
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock%}
+<!-- Service End -->
+
+<!-- About Start -->
+
+{% block about %}
+<div class="container-xxl py-5">
+  <div class="container">
+    <div class="row g-5">
+      <div
+        class="col-lg-6 wow fadeInUp"
+        data-wow-delay="0.1s"
+        style="min-height: 400px"
+      >
+        <div class="position-relative h-100">
+          <img
+            class="img-fluid position-absolute w-100 h-100"
+            src="{{url_for('static', filename = 'img/ssm00.jpg')}}"
+            alt=""
+            style="object-fit: cover"
+          />
+        </div>
+      </div>
+      <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+        <h6 class="section-title bg-white text-start text-primary pe-3">
+          About Us
+        </h6>
+        <h1 class="mb-4">Welcome to SSM COLLEGE</h1>
+
+        <p class="mb-4">
+          Situated at Parihaspora (Diver) 20 Kms away from Srinagar City.
+          Imparting Technical education at Degree level in the branches of
+          Civil, Mechanical, Computer, Electrical and Electronics &
+          Communication Engineering and post-graduate courses MTech in
+          Mechanical Engineering, MTech E&C, MCA and MBA besides UG course of
+          BBA. Further Six Diploma Courses of Engineering are being imparted in
+          the Polytechnic wing of the Campus. The only Private Engineering
+          Institute in the Kashmir Valley imparting Technical education at
+          undergraduate & Post graduate level. Possesses an advantage of being
+          in a rural area situated in the vicinity of Cities & Towns like
+          Srinagar, Baramulla, Budgam assuming a centrally located place.
+          Possesses huge infrastructure with all facilities of teaching/learning
+          etc. Management, being proactive, all the academic functionaries feel
+          highly responsive and dedicated. Academics results of the students
+          have all along been excellent reflecting a good image of the
+          Institute.
+        </p>
+        {% if current_user.is_authenticated %}
+        <!-- Display protected content for authenticated users -->
+        <p>This content is only visible to logged-in users.</p>
+        {% else %}
+        <!-- Display a message for non-authenticated users -->
+        <p>You need to log in to access this content.</p>
+        {% endif %}
+      </div>
+      {% endblock %}
+
+      <!-- About End -->
+
+
+      <!-- Team Start -->
+
+      {% block team %}
+      <div class="container-xxl py-5">
+        <div class="container">
+          <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="section-title bg-white text-center text-primary px-3">
+              Instructors
+            </h6>
+            <h1 class="mb-5">Expert Instructors</h1>
+          </div>
+          <div class="row g-4">
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+              <div class="team-item bg-light">
+                <div class="overflow-hidden">
+                  <img
+                    class="img-fluid"
+                    src="{{url_for('static', filename = 'img/YASMEEN MAAM1.jpg')}}"
+                    alt=""
+                  />
+                </div>
+                <div
+                  class="position-relative d-flex justify-content-center"
+                  style="margin-top: -23px"
+                >
+                  <div class="bg-light d-flex justify-content-center pt-2 px-1">
+                    <a class="btn btn-sm-square btn-primary mx-1" href=""
+                      ><i class="fab fa-facebook-f"></i
+                    ></a>
+                    <a class="btn btn-sm-square btn-primary mx-1" href=""
+                      ><i class="fab fa-twitter"></i
+                    ></a>
+                    <a class="btn btn-sm-square btn-primary mx-1" href=""
+                      ><i class="fab fa-instagram"></i
+                    ></a>
+                  </div>
+                </div>
+                <div class="text-center p-4">
+                  <h5 class="mb-0">Mrs. YASMEEN</h5>
+                  <small>HOD CSE</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+              <div class="team-item bg-light">
+                <div class="overflow-hidden">
+                  <img
+                    class="img-fluid"
+                    src="{{url_for('static', filename = 'img/Irfan Photo_JPG1.jpg')}}"
+                    alt=""
+                  />
+                </div>
+                <div
+                  class="position-relative d-flex justify-content-center"
+                  style="margin-top: -23px"
+                >
+                  <div class="bg-light d-flex justify-content-center pt-2 px-1">
+                    <a class="btn btn-sm-square btn-primary mx-1" href=""
+                      ><i class="fab fa-facebook-f"></i
+                    ></a>
+                    <a class="btn btn-sm-square btn-primary mx-1" href=""
+                      ><i class="fab fa-twitter"></i
+                    ></a>
+                    <a class="btn btn-sm-square btn-primary mx-1" href=""
+                      ><i class="fab fa-instagram"></i
+                    ></a>
+                  </div>
+                </div>
+                <div class="text-center p-4">
+                  <h5 class="mb-0">Mr.Irfan Rashid</h5>
+                  <small>HOD MCA</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+              <div class="team-item bg-light">
+                <div class="overflow-hidden">
+                  <img
+                    class="img-fluid"
+                    src="{{url_for('static', filename = 'img/nayiem mechanical1.jpg')}}"
+                    alt=""
+                  />
+                </div>
+                <div
+                  class="position-relative d-flex justify-content-center"
+                  style="margin-top: -23px"
+                >
+                  <div class="bg-light d-flex justify-content-center pt-2 px-1">
+                    <a class="btn btn-sm-square btn-primary mx-1" href=""
+                      ><i class="fab fa-facebook-f"></i
+                    ></a>
+                    <a class="btn btn-sm-square btn-primary mx-1" href=""
+                      ><i class="fab fa-twitter"></i
+                    ></a>
+                    <a class="btn btn-sm-square btn-primary mx-1" href=""
+                      ><i class="fab fa-instagram"></i
+                    ></a>
+                  </div>
+                </div>
+                <div class="text-center p-4">
+                  <h5 class="mb-0">Mr.Nayiem Ahmad</h5>
+                  <small>HOD MECHANICAL</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+              <div class="team-item bg-light">
+                <div class="overflow-hidden">
+                  <img
+                    class="img-fluid"
+                    src="{{url_for('static', filename = 'img/Shabina.webp')}}"
+                    alt=""
+                  />
+                </div>
+                <div
+                  class="position-relative d-flex justify-content-center"
+                  style="margin-top: -23px"
+                >
+                  <div class="bg-light d-flex justify-content-center pt-2 px-1">
+                    <a class="btn btn-sm-square btn-primary mx-1" href=""
+                      ><i class="fab fa-facebook-f"></i
+                    ></a>
+                    <a class="btn btn-sm-square btn-primary mx-1" href=""
+                      ><i class="fab fa-twitter"></i
+                    ></a>
+                    <a class="btn btn-sm-square btn-primary mx-1" href=""
+                      ><i class="fab fa-instagram"></i
+                    ></a>
+                  </div>
+                </div>
+                <div class="text-center p-4">
+                  <h5 class="mb-0">Mrs.Shabina Masoodi</h5>
+                  <small>HOD CIVIL</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endblock %}
+
+      <!-- Team End -->
+    </div>
+  </div>
+</div>

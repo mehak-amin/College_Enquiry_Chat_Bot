@@ -1,0 +1,79 @@
+<!-- Extends the base file -->
+
+{% extends 'base.html' %}
+
+<!-- Title for the page -->
+
+{% block title %} Login/Sign Up {% endblock %} {% block contact%}
+
+<!-- Login Start -->
+<div class="container-xxl py-5">
+  <div class="container">
+    <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+      <h6 class="section-title bg-white text-center text-primary px-3">
+        Login
+      </h6>
+      <h1 class="mb-5">Please Login to continue</h1>
+      {% with messages = get_flashed_messages(with_categories=true) %} {% if
+      messages %}
+      <div class="flash-messages container mt-3">
+        {% for category, message in messages %}
+        <div
+          class="alert alert-{{ category }} alert-dismissible fade show"
+          role="alert"
+        >
+          {{ message }}
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="alert"
+            aria-label="Close"
+          ></button>
+        </div>
+        {% endfor %}
+      </div>
+      {% endif %} {% endwith %}
+      <div class="row justify-content-center">
+        <!-- Add justify-content-center class here -->
+        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+          <form method="post">
+            {{ form.hidden_tag() }}
+            <div class="row g-3">
+              <div class="col-12">
+                <div class="form-floating">
+                  {{ form.username.label() }} <br /><br />
+                  {{ form.username(class = "form-control", placeholder =
+                  "Username")}}
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="form-floating">
+                  {{ form.password.label()}} <br /><br />
+                  {{ form.password(class = "form-control", placeholder =
+                  "Password")}}
+                </div>
+              </div>
+
+              <div class="col-12">
+                <button class="btn btn-primary w-100 py-3" type="submit">
+                  Login
+                </button>
+              </div>
+              <div class="col-12">
+                <button class="btn btn-primary w-100 py-3" type="submit">
+                  <a href="{{url_for('register_page')}}" style="color: white"
+                    >Dont have an account? / Signup</a
+                  >
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Login End -->
+      {% endblock%}
+    </div>
+  </div>
+</div>
